@@ -6,7 +6,7 @@ abstract class HomeLocalDataSource {
   List<BookEntity> fetchNewestBooks();
 }
 
-class HomeLocalDataSourceImp implements HomeLocalDataSource{
+class HomeLocalDataSourceImp implements HomeLocalDataSource {
   @override
   List<BookEntity> fetchFeaturedBooks() {
     // TODO: implement fetchFeaturedBooks
@@ -18,5 +18,4 @@ class HomeLocalDataSourceImp implements HomeLocalDataSource{
     // TODO: implement fetchNewestBooks
     throw UnimplementedError();
   }
-
 }
