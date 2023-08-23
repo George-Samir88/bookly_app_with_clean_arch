@@ -41,6 +41,10 @@ class HomeRemoteDataSourceImp implements HomeRemoteDataSource {
     for (var e in jsonData['items']) {
       books.add(BookModel.fromJson(e));
     }
+    saveBooksIntoHiveBox(
+      boxName: kNewestBox,
+      books: books,
+    );
     return books;
   }
 }

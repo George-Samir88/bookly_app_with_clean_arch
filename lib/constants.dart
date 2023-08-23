@@ -4,3 +4,4 @@ const kPrimaryColor = Color(0xff100B20);
 const kTransitionDuration = Duration(milliseconds: 250);
 const kGtSectraFine = 'GT_Sectra_Fine_Regular.ttf';
 const kFeaturedBox = 'featured_box';
+const kNewestBox = 'Newest_box';
