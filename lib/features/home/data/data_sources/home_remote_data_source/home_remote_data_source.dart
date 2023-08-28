@@ -33,6 +33,10 @@ class HomeRemoteDataSourceImp implements HomeRemoteDataSource {
     var jsonData = await apiService.get(
         endPoint: 'volumes?q=programming&Filtering=free-ebooks&Sorting=newest');
     List<BookEntity> books = parseJsonStringToBookList(jsonData);
+    saveBooksIntoHiveBox(
+      boxName: kNewestBox,
+      books: books,
+    );
     return books;
   }
 
@@ -41,10 +45,6 @@ class HomeRemoteDataSourceImp implements HomeRemoteDataSource {
     for (var e in jsonData['items']) {
       books.add(BookModel.fromJson(e));
     }
-    saveBooksIntoHiveBox(
-      boxName: kNewestBox,
-      books: books,
-    );
     return books;
   }
 }
