@@ -4,6 +4,6 @@ import '../../features/home/domain/entities/book_entity.dart';
 
 void saveBooksIntoHiveBox(
     {required String boxName, required List<BookEntity> books}) {
-  var box = Hive.box(boxName);
+  var box = Hive.box<BookEntity>(boxName);
   box.addAll(books);
 }

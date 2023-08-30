@@ -37,7 +37,7 @@ class MyApp extends StatelessWidget {
             FetchFeaturedBooksUseCase(
               locator.get<HomeRepoImp>(),
             ),
-          );
+          )..fetchFeaturedBooks();
         }),
         BlocProvider(create: (context) {
           return NewestBooksCubit(
