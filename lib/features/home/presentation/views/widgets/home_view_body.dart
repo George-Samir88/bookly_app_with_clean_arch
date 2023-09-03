@@ -24,7 +24,7 @@ class HomeViewBody extends StatelessWidget {
                   SizedBox(
                     height: MediaQuery.of(context).size.height * 0.04,
                   ),
-                  const CustomFeaturedBookBlocBuilder(),
+                  const CustomFeaturedBookBlocConsumer(),
                   SizedBox(
                     height: MediaQuery.of(context).size.height * 0.05,
                   ),

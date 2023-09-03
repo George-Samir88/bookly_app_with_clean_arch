@@ -6,7 +6,7 @@ import '../../../../../core/functions/save_books_into_hive.dart';
 import '../../models/book_model/book_model.dart';
 
 abstract class HomeRemoteDataSource {
-  Future<List<BookEntity>> fetchFeaturedBooks();
+  Future<List<BookEntity>> fetchFeaturedBooks({int pageNumber = 0});
 
   Future<List<BookEntity>> fetchNewestBooks();
 }
@@ -17,9 +17,10 @@ class HomeRemoteDataSourceImp implements HomeRemoteDataSource {
   HomeRemoteDataSourceImp(this.apiService);
 
   @override
-  Future<List<BookEntity>> fetchFeaturedBooks() async {
+  Future<List<BookEntity>> fetchFeaturedBooks({int pageNumber = 0}) async {
     var jsonData = await apiService.get(
-        endPoint: 'volumes?q=programming&Filtering=free-ebooks');
+        endPoint:
+            'volumes?q=programming&Filtering=free-ebooks&startIndex=${pageNumber * 10}');
     List<BookEntity> books = parseJsonStringToBookList(jsonData);
     saveBooksIntoHiveBox(
       books: books,
