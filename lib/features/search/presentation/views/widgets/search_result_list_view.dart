@@ -1,5 +1,5 @@
-import 'package:bookly_app/features/home/presentation/views/widgets/best_seller_item_of_list_view.dart';
 import 'package:flutter/material.dart';
+
 
 class SearchResultListView extends StatelessWidget {
   const SearchResultListView({super.key});
@@ -9,7 +9,9 @@ class SearchResultListView extends StatelessWidget {
     return ListView.separated(
         physics: const BouncingScrollPhysics(),
         itemBuilder: (context, index) {
-          return const BestSellerItemOfListView();
+          // return BestSellerItemOfListView(
+          //   book: ,
+          // );
         },
         separatorBuilder: (context, index) {
           return const SizedBox(
