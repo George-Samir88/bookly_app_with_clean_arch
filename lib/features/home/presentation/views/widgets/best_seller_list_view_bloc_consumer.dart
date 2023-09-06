@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:bookly_app/core/widgets/error_widget_toast.dart';
 import 'package:bookly_app/features/home/presentation/manager/newest_books_cubit/newest_books_cubit.dart';
+import 'package:bookly_app/features/home/presentation/views/widgets/custom_loading_indicator_newest_books/best_seller_list_view_loading_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -47,9 +48,7 @@ class _BestSellerListViewBlocConsumerState
           child: Text(state.error.toString()),
         );
       } else {
-        return const Center(
-          child: CircularProgressIndicator(),
-        );
+        return const BestSellerListViewLoadingIndicator();
       }
     });
   }
