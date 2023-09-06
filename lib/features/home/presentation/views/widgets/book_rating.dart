@@ -4,9 +4,12 @@ import 'package:font_awesome_icon_class/font_awesome_icon_class.dart';
 
 class BookRating extends StatelessWidget {
   const BookRating(
-      {super.key, this.mainAxisAlignment = MainAxisAlignment.start});
+      {super.key,
+      this.mainAxisAlignment = MainAxisAlignment.start,
+      required this.bookRating});
 
   final MainAxisAlignment mainAxisAlignment;
+  final int bookRating;
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +32,7 @@ class BookRating extends StatelessWidget {
           width: 5.0,
         ),
         Text(
-          '(2456)',
+          '${bookRating.toInt()}',
           style: Styles.textStyle14.copyWith(
             color: Colors.white.withOpacity(0.5),
             fontWeight: FontWeight.w600,

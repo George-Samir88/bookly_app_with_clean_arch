@@ -1,12 +1,17 @@
 import 'package:bookly_app/core/utils/styles.dart';
-import 'package:bookly_app/features/home/presentation/views/widgets/best_seller_list_view.dart';
+import 'package:bookly_app/features/home/presentation/views/widgets/best_seller_list_view_bloc_consumer.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/custom_app_bar.dart';
 import 'package:flutter/material.dart';
-
 import 'custom_featured_books_bloc_builder.dart';
 
-class HomeViewBody extends StatelessWidget {
+class HomeViewBody extends StatefulWidget {
   const HomeViewBody({super.key});
+
+  @override
+  State<HomeViewBody> createState() => _HomeViewBodyState();
+}
+
+class _HomeViewBodyState extends State<HomeViewBody> {
 
   @override
   Widget build(BuildContext context) {
@@ -44,12 +49,10 @@ class HomeViewBody extends StatelessWidget {
           // ), //when using sliverToBoxAdapter you are going to make listView shrinkWrap: true that's make listView create all item before showing which lose performance of app
           //replace sliverToBoxAdapter with SliverFillRemaining
           const SliverFillRemaining(
-            child: BestSellerListView(),
+            child: BestSellerListViewBlocConsumer(),
           ),
         ],
       ),
     );
   }
 }
-
-
